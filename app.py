@@ -4,7 +4,7 @@ import dash
 from dash import Dash, html
 import dash_bootstrap_components as dbc
 
-app = Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.SLATE])
 
 app.layout = html.Div([
     dbc.Nav(
@@ -23,7 +23,8 @@ app.layout = html.Div([
     ),
     dbc.Container([
         dash.page_container
-    ])
+    ],
+    fluid=True)
 ])
 
 if __name__ == '__main__':
