@@ -50,7 +50,7 @@ def drawText():
         dbc.Card(
             dbc.CardBody([
                 html.Div([
-                    html.H2("Text"),
+                    html.H2("Test"),
                 ], style={'textAlign': 'center'}) 
             ])
         ),

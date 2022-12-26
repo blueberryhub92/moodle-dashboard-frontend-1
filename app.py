@@ -4,10 +4,10 @@ import dash
 from dash import Dash, html
 import dash_bootstrap_components as dbc
 
-app = Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.SLATE])
+app = Dash(__name__, use_pages=True, external_stylesheets=[dbc.themes.QUARTZ])
 
 app.layout = html.Div([
-    dbc.Nav(
+    dbc.NavbarSimple(
         [
             dbc.NavLink(
                 [
@@ -18,13 +18,17 @@ app.layout = html.Div([
             )
             for page in dash.page_registry.values()
         ],
-        fill=True,
-        pills=True
+        brand='Moodle analytics dashboard',
+        fixed='top',
     ),
-    dbc.Container([
-        dash.page_container
-    ],
-    fluid=True)
+    dbc.Container(
+        [
+            dash.page_container
+        ],
+        style={
+            'marginTop': '5rem'
+        }
+    )
 ])
 
 if __name__ == '__main__':
